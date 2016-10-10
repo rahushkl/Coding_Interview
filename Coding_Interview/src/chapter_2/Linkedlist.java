@@ -98,13 +98,15 @@ public class Linkedlist {
 		Node current = head;
 		do
 		{
-			System.out.println(current.getData());
+			System.out.print(current.getData());
+			System.out.print(", ");
 			current = current.getNext();
 		}while(current.next!=null);
 		if(current.next == null)
 		{
-			System.out.println(current.data);
+			System.out.print(current.data);
 		}
+		System.out.println();
 	}
 	Node fetch(int d)
 	{
@@ -133,6 +135,31 @@ public class Linkedlist {
 			
 		}
 		return find;
+	}
+	int FindData(int index)
+	{
+		int Data = 0;
+		int count = 1;
+		if(index == 0)
+		{
+			return head.data;
+		}
+		else
+		{
+			
+			Node current = head;
+			do
+			{
+			  current = current.next;
+			  count++;
+			  if(count == index)
+				{
+					Data = current.data;
+				}
+			}while(count<=index);
+			
+		}
+		return Data;
 	}
 	
 
